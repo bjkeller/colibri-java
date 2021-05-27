@@ -1,8 +1,25 @@
 # Colibri-java
 
-The purpose of this document is to provide a short introduction about how to use the library. More information about the individual methods can be found in the comments included in the source files.
+Colibri-Java is an implementation of Formal Concept Analysis in Java originally written by Daniel Goetzman and Christian Lindig.
+The project was stored as a repository at Google Code, which was later [exported to GitHub](https://github.com/cunkart/colibri-java).
+This particular repository is an updated fork of that exported copy.
 
-You can download the source code from this subversion repository anonymously:
+Formal concept analysis is an algebraic theory for binary relation,
+which can be represented as cross tables. It identifies all maximal
+rectangles in such a table; these rectangles from a hierarchy, the
+so-called concept lattice. The concept lattice gives insight into the
+original cross table.
+
+The implementation of formal concept analysis is designed as a library
+but includes a small demo application that computes the concept lattice
+for a relation read from a file.
+
+The purpose of this document is to provide a short introduction about how to use the library. 
+More information about the individual methods can be found in the comments included in the source files.
+
+## Getting Started
+
+Start by cloning this repository
 
 ```shell
 git clone https://github.com/bjkeller/colibri-java.git
