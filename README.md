@@ -1,4 +1,4 @@
-# Colibi-Java
+# Colibri-Java
 
 Colibri-Java is an implementation of Formal Concept Analysis in Java.
 Formal concept analysis is an algebraic theory for binary relation,
@@ -16,7 +16,7 @@ for a relation read from a file.
 - `colibri/` Java implementation
 - `doc/` Papers
 
-The `doc/` directory contains Daniel G�tzmann's Bachelor Thesis (in
+The `doc/` directory contains Daniel Goetzmann's Bachelor Thesis (in
 German) about this implementation. In addition, a paper by Christian
 Lindig explains the idea how to use formal concept analysis to mine data
 for rules and exceptions from these rules. The implementation provides
@@ -25,13 +25,13 @@ iterators for this purpose.
 ## See Also
 
 A similar library like this but implemented in Objective Caml can be
-found at http://code.google.com/p/colibri-ml/. An older and less
+found at <http://code.google.com/p/colibri-ml/>. An older and less
 advanced implementation in C can be found at
-http://code.google.com/p/colibri-concepts/.
+<http://code.google.com/p/colibri-concepts/>.
 
 ## Author
 
-- Daniel G�tzmann <dngoetzmann@googlemail.com>
+- Daniel Goetzmann <dngoetzmann@googlemail.com>
 - Christian Lindig <lindig@gmail.com>
 
 ## Copyright
