@@ -32,7 +32,7 @@ public class RelationReaderCON  {
 	public Relation read(String fileName, Relation relation) throws IOException {
 		String currentObject = null;
 		String currentAttribute = null;
-		StringBuffer buffer = new StringBuffer();
+		StringBuilder buffer = new StringBuilder();
 		boolean comment = false;
 		
 		FileReader reader = new FileReader(fileName);
@@ -48,17 +48,17 @@ public class RelationReaderCON  {
 						case '\t':
 						case '\n':
 							//clear the buffer
-							buffer = new StringBuffer();
+							buffer = new StringBuilder();
 							break;
 						case '%':		//comment
 							
-							buffer = new StringBuffer();
+							buffer = new StringBuilder();
 							comment = true;
 							break;
 						case ':':		//end of object
 							currentObject = buffer.toString();
 							relation.add(currentObject, null);
-							buffer = new StringBuffer();
+							buffer = new StringBuilder();
 							break;
 						default:		//read the next character into the buffer
 							buffer.append(nextChar[0]);
@@ -72,19 +72,19 @@ public class RelationReaderCON  {
 							if (buffer.length() > 0) {
 								currentAttribute = buffer.toString();
 								relation.add(currentObject, currentAttribute);
-								buffer = new StringBuffer();
+								buffer = new StringBuilder();
 								currentAttribute = null;
 							}
 							break;
 						case '%':		//comment
-							buffer = new StringBuffer();
+							buffer = new StringBuilder();
 							comment = true;
 							break;
 						case ';':		//end of attribute list
 							if (buffer.length() > 0) {
 								currentAttribute = buffer.toString();
 								relation.add(currentObject, currentAttribute);
-								buffer = new StringBuffer();
+								buffer = new StringBuilder();
 								currentAttribute = null;
 							}
 							currentObject = null;

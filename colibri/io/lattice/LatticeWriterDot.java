@@ -32,7 +32,7 @@ public class LatticeWriterDot {
 			
 			while(edgeIterator.hasNext()) {
 				Edge edge = edgeIterator.next();
-				StringBuffer buffer = new StringBuffer();
+				StringBuilder buffer = new StringBuilder();
 				
 				buffer.append("\"");
 				
