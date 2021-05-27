@@ -1,11 +1,11 @@
-# Getting Started
+# Colibri-java
 
 The purpose of this document is to provide a short introduction about how to use the library. More information about the individual methods can be found in the comments included in the source files.
 
 You can download the source code from this subversion repository anonymously:
 
-```
-svn checkout http://colibri-java.googlecode.com/svn/trunk/ colibri-java
+```shell
+git clone https://github.com/bjkeller/colibri-java.git
 ```
 
 The relevant classes and interfaces are contained in the package `colibri.lib`.
@@ -16,13 +16,13 @@ Formal concept analysis is an algebraic theory for binary relations between a se
 
 Create an initially empty `Relation`:
 
-```
+```java
 Relation rel = new TreeRelation();
 ```
 
 The `add` method of `Relation` is used to add object-attribute pairs to the relation. For example,
 
-```
+```java
 rel.add(some_object, some_attribute);
 ```
 
@@ -36,7 +36,7 @@ When `rel` is complete, a `Lattice` object can be generated from it. There are t
 
 In order to generate a `Lattice` from `rel`, pass `rel` to the constructor:
 
-```
+```java
 Lattice lattice = new HybridLattice(rel);
 ```
 
@@ -65,22 +65,22 @@ The library supports several traversals, including the following:
 
 Which of those traversals you should choose depends on your intentions. If, for example, you want to iterate over all concepts that have at least ten objects it's best to choose `Traversal.TOP_OBJSIZE`:
 
-```
+```java
 //get the iterator
 Iterator<Concept> it = lattice.conceptIterator(Traversal.TOP_OBJSIZE);
 
 while(it.hasNext()) {
     Concept c = it.next();
-	if (c.getObjects().size() >= 10) {
-		//do something with the concept, e.g. print it:
-		System.out.println(c);
-	}
-	else {
-		//Since concepts are returned in decreasing order of their
-		//object sizes, the iteration can be aborted when the iterator
-		//returns a concept having less than 10 objects the first time.
-		break;
-	}
+    if (c.getObjects().size() >= 10) {
+        //do something with the concept, e.g. print it:
+        System.out.println(c);
+    }
+    else {
+        //Since concepts are returned in decreasing order of their
+        //object sizes, the iteration can be aborted when the iterator
+        //returns a concept having less than 10 objects the first time.
+        break;
+    }
 }
 ```
 
