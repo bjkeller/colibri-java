@@ -2,6 +2,7 @@ package colibri.lib;
 
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.TreeSet;
@@ -19,9 +20,9 @@ class ConceptIteratorBUDF implements Iterator<Concept> {
 	
 	private Lattice lattice;
 	
-	private LinkedList<Set<ComparableSet>> past;	//stores the attribute sets of the concepts that have already been completely explored
-	private LinkedList<Concept> current;			//stores the current path
-	private LinkedList<Iterator<Concept>> future;	//stores the concepts that will be considered in the future
+	private List<Set<ComparableSet>> past;	//stores the attribute sets of the concepts that have already been completely explored
+	private List<Concept> current;			//stores the current path
+	private List<Iterator<Concept>> future;	//stores the concepts that will be considered in the future
 	
 	private Concept nextConcept;					//stores the concept that will be returned next by next()
 	
