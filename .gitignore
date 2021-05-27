@@ -1,2 +1,3 @@
 # snyk config
 .dccache
+.vscode
